@@ -33,3 +33,15 @@ const findSecMax = (arr) => {
 };
 
 console.log(findSecMax(arr));
+
+//3-> remove duplicate elements from an array
+console.log("----------------------");
+console.log("Remove duplicate without using Sets");
+const removeDuplicate = (arr) => {
+  const newArr = arr.filter((elem, index) => {
+    return arr.indexOf(elem) === index;
+  });
+  return newArr;
+};
+const arr2 = [1, 2, 3, 4, 2, 3, "am", 5, 6, "am"];
+console.log(removeDuplicate(arr2));
