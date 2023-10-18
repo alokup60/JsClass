@@ -8,32 +8,42 @@ class Node {
 
 //2-> initialize head pos.
 class LinkedList {
-  constructor(head = null) {
-    this.head = head;
+  constructor() {
+    this.head = null;
+    this.size = 0; //optional
   }
 
-  size() {
-    let count = 0;
-    let node = this.head;
-    while (node) {
-      count++;
-      node = node.next;
-    }
-    return count;
+  // size() {
+  //   let count = 0;
+  //   let node = this.head;
+  //   while (node) {
+  //     count++;
+  //     node = node.next;
+  //   }
+  //   return count;
+  // }
+
+  getSize() {
+    return this.size;
   }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
   getFirst() {
     let node = this.head;
     return node;
   }
-  getLast() {
-    let lastNode = this.head;
-    if (lastNode) {
-      while (lastNode.next) {
-        lastNode = lastNode.next;
-      }
-    }
-    return lastNode;
-  }
+  // getLast() {
+  //   let lastNode = this.head;
+  //   if (lastNode) {
+  //     while (lastNode.next) {
+  //       lastNode = lastNode.next;
+  //     }
+  //   }
+  //   return lastNode;
+  // }
   clear() {
     return (this.head = null);
   }
@@ -46,12 +56,13 @@ node1.next = node2;
 
 //4-> create object for head
 let list = new LinkedList(node1);
-
-console.log("size of linked list is: ", list.size());
+console.log("is Empty: ", list.isEmpty());
+console.log("size is: ", list.getSize());
+// console.log("size of linked list is: ", list.size());
 console.log("first node is: ", list.getFirst());
-console.log(list.head.next.data); //5
-console.log("last node is: ", list.getLast());
-console.log(list.clear());
+// console.log(list.head.next.data); //5
+// console.log("last node is: ", list.getLast());
+// console.log(list.clear());
 // console.log(list.head); //Node { data: 4, next: Node { data: 5, next: null } }
 // console.log(list.head.data); //4
 // console.log(list.head.next); //Node { data: 5, next: null }
