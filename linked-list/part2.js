@@ -19,6 +19,7 @@ class LinkedList {
     return this.size;
   }
 
+  //O(1) -> constant
   prepend(value) {
     const node = new Node(value); //1-> add value by creating object of Node
     if (this.isEmpty()) {
@@ -28,6 +29,46 @@ class LinkedList {
       this.head = node;
     }
     this.size++;
+  }
+
+  //O(n)
+  append(value) {
+    const node = new Node(value);
+    if (this.isEmpty()) {
+      this.head = node;
+    } else {
+      let prev = this.head;
+      while (prev.next) {
+        prev = prev.next;
+      }
+      prev.next = node;
+    }
+    this.size++;
+  }
+
+  insert(value, index) {
+    if (index < 0 || index > this.size) {
+      console.log("something went wrong");
+    }
+    if (index === 0) {
+      // const node = new Node(value);
+      // if (this.isEmpty()) {
+      //   node = this.head;
+      // } else {
+      //   node.next = this.head;
+      //   this.head = node;
+      // }
+      this.prepend(value);
+    } else {
+      const node = new Node(value);
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+      node.next = prev.next;
+      prev.next = node;
+      this.size++;
+    }
   }
 
   print() {
@@ -55,4 +96,12 @@ list.prepend(5);
 list.print();
 list.prepend(10);
 list.prepend(20);
+list.append(30);
+list.append(40);
+console.log("printing before insertion: ");
+list.print();
+console.log("printing after insertion: ");
+list.insert(15, 2);
+console.log("printing with only single value: ");
+list.insert(11);
 list.print();
