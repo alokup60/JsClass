@@ -71,6 +71,27 @@ class LinkedList {
     }
   }
 
+  removeFrom(index) {
+    if (index < 0 || index > this.size) {
+      return null;
+    }
+    let removeNode;
+    if (index === 0) {
+      removeNode = this.head;
+      this.head = this.head.next;
+    } else {
+      let prev;
+      prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+      removeNode = prev.next;
+      prev.next = removeNode.next;
+    }
+    this.size--;
+    return removeNode.value;
+  }
+
   print() {
     if (this.isEmpty()) {
       console.log("List is Empty.");
@@ -92,16 +113,30 @@ console.log("is Empty: ", list.isEmpty());
 console.log("size is: ", list.getSize());
 console.log("Adding first node: ");
 list.print();
+
 list.prepend(5);
 list.print();
+
 list.prepend(10);
 list.prepend(20);
 list.append(30);
 list.append(40);
 console.log("printing before insertion: ");
 list.print();
+
 console.log("printing after insertion: ");
 list.insert(15, 2);
+
 console.log("printing with only single value: ");
 list.insert(11);
+list.print();
+console.log(list.getSize());
+
+console.log(list.removeFrom(10)); // if index is out of range
+
+list.removeFrom(0); //remove when index is 0
+list.print();
+console.log(list.getSize());
+
+list.removeFrom(3); //remove from any position
 list.print();
