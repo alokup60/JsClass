@@ -5,6 +5,7 @@ class Node {
   }
 }
 
+//remove node
 class LinkedList {
   constructor() {
     this.head = null; //initialize head pos.
@@ -92,6 +93,21 @@ class LinkedList {
     return removeNode.value;
   }
 
+  search(value) {
+    if (this.isEmpty()) {
+      return -1;
+    }
+    let curr = this.head;
+    for (let i = 0; i < this.size; i++) {
+      if (curr.value === value) {
+        console.log("value is: ", curr.value, " index is: ", i);
+        return i;
+      }
+      curr = curr.next; //increment the curr
+    }
+    return -1;
+  }
+
   print() {
     if (this.isEmpty()) {
       console.log("List is Empty.");
@@ -140,3 +156,6 @@ console.log(list.getSize());
 
 list.removeFrom(3); //remove from any position
 list.print();
+
+console.log(list.search(60)); // value not available in the list
+console.log(list.search(30));
