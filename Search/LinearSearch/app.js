@@ -2,7 +2,7 @@
 //Space-complexity -> 0(1)
 const linearSearch = (arr, target) => {
   for (let i of arr) {
-    if (target === arr[i]) {
+    if (target === i) {
       return i;
     }
   }
