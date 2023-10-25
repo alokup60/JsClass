@@ -45,3 +45,11 @@ const removeDuplicate = (arr) => {
 };
 const arr2 = [1, 2, 3, 4, 2, 3, "am", 5, 6, "am"];
 console.log(removeDuplicate(arr2));
+
+//4-> remove duplicate elements from an array using Sets
+console.log("----------------------");
+console.log("Remove duplicate using Sets");
+const arr3 = [10, 20, 30, 20, 11];
+const originalArr = new Set(arr3); //in Object
+const arrForm = [...originalArr]; //convert in array
+console.log(arrForm);
