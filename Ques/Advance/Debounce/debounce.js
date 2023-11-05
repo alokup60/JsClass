@@ -3,6 +3,8 @@
 
 const inputBox = document.getElementById("searchBox");
 const output = document.getElementById("output");
+
+//debounce function
 const debounce = (mainFn, delay) => {
   let timer;
   return function (...args) {
@@ -14,6 +16,7 @@ const debounce = (mainFn, delay) => {
   };
 };
 
+//function
 const searchData = (e) => {
   output.innerHTML = e.target.value;
   console.log(e.target.value);
@@ -21,7 +24,6 @@ const searchData = (e) => {
 };
 
 const debounceFn = debounce(searchData, 3000);
-// console.log(debounceFn);
 inputBox.addEventListener("input", debounceFn);
 
 //-----------------------without using debounce------------

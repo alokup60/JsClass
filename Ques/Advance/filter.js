@@ -10,12 +10,3 @@ const arrayOfObjects = [
 
 const sortedArray = sortByKey(arrayOfObjects, "age");
 console.log(sortedArray);
-
-//Normal
-// const ascOrder = (arr) => {
-//   const sortedArr = arr.sort((a, b) => a - b);
-//   return sortedArr;
-// };
-
-// const arr = [9, 5, 1, 6, 3, 2];
-// console.log(ascOrder(arr));
