@@ -25,3 +25,17 @@ console.log(" word reverse");
 const str2 = "alok Raj singh";
 const newStr2 = str2.split(" ").reverse().join(" ");
 console.log(newStr2);
+
+//without using in-built function reverse the string
+console.log(
+  "----------------without using in-built function reverse the string----------------------"
+);
+const str3 = "Alok";
+const reverseStr = (str) => {
+  let newStr3 = "";
+  for (let i = str3.length - 1; i >= 0; i--) {
+    newStr3 += str3[i];
+  }
+  return newStr3;
+};
+console.log(reverseStr(str3));
