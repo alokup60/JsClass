@@ -13,17 +13,21 @@ const fibonacci = (num) => {
 
 fibonacci(10);
 
-// console.log("----------uisng recursion----------");
-// const fibonacciRecu = (n) => {
-//   if (n === 0) {
-//     return 0;
-//   } else if (n === 1) {
-//     return 1;
-//   } else {
-//     return fibonacciRecu(n - 1) + fibonacciRecu(n - 2);
-//   }
-// };
-// console.log(fibonacciRecu(5));
+console.log("----------uisng recursion----------");
+const fibonacciRecu = (n) => {
+  const fibonacci = (n) => {
+    if (n === 0) {
+      return 0;
+    } else if (n === 1) {
+      return 1;
+    } else {
+      console.log(n - 1, n - 2);
+      fibonacci(n - 1) + fibonacci(n - 2);
+    }
+  };
+  return fibonacci(n);
+};
+fibonacciRecu(5);
 
 console.log("-----------decreasing order using recursion------------");
 const rec = (n) => {
@@ -41,3 +45,20 @@ const rec = (n) => {
 };
 
 rec(5);
+
+console.log("--------------Increasing Order--------------");
+const recIn = (n) => {
+  const increase = (n) => {
+    if (n < 0) {
+      return -1;
+    } else if (n === 0) {
+      return 0;
+    } else {
+      increase(n - 1);
+      console.log(n);
+    }
+  };
+  return increase(n);
+};
+
+recIn(5);
