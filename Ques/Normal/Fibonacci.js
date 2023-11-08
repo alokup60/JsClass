@@ -54,6 +54,7 @@ const recIn = (n) => {
     } else if (n === 0) {
       return 0;
     } else {
+      console.log(n);
       increase(n - 1);
       console.log(n);
     }
