@@ -12,3 +12,32 @@ const fibonacci = (num) => {
 };
 
 fibonacci(10);
+
+// console.log("----------uisng recursion----------");
+// const fibonacciRecu = (n) => {
+//   if (n === 0) {
+//     return 0;
+//   } else if (n === 1) {
+//     return 1;
+//   } else {
+//     return fibonacciRecu(n - 1) + fibonacciRecu(n - 2);
+//   }
+// };
+// console.log(fibonacciRecu(5));
+
+console.log("-----------decreasing order using recursion------------");
+const rec = (n) => {
+  const decrease = (n) => {
+    if (n < 0) {
+      return -1;
+    } else if (n === 0) {
+      return 0;
+    } else {
+      console.log(n);
+      decrease(n - 1);
+    }
+  };
+  return decrease(n);
+};
+
+rec(5);
