@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="#">Logo</a>
+      </div>
+      <div class="nav-items">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <div class="dropdown">
+            <button class="dropBtn" onclick="dropHandler()">
+              Services <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <div class="dropContent" id="dropContent">
+              <a href="#">Demo 1</a>
+              <a href="#">Demo 1</a>
+              <a href="#">Demo 1</a>
+              <a href="#">Demo 1</a>
+            </div>
+          </div>
+          <!-- <li><a href="#">Services</a></li> -->
+          <li><a href="#">Conatct Us</a></li>
+        </ul>
+        <div class="searching">
+          <input type="text" placeholder="search" id="search" />
+          <button class="searchBtn">Search</button>
+        </div>
+      </div>
+    </nav>
+    <script src="./app.js"></script>
+  </body>
+</html>

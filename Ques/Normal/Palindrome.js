@@ -14,3 +14,26 @@ const checkPalindrome = (value) => {
 };
 
 checkPalindrome("alok");
+
+//using Two-Pointers
+const isPalindrome = (value) => {
+  if (typeof value === "number" || typeof value === "string") {
+    const str = value.toString();
+    let left = 0;
+    let right = str.length - 1;
+
+    while (left < right) {
+      if (str[left] !== str[right]) {
+        return false;
+      }
+      left++;
+      right--;
+    }
+    return true;
+  } else {
+    console.log("Invalid input type, Please provide number or String");
+    return fasle;
+  }
+};
+
+console.log(isPalindrome("RaR"));
